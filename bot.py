@@ -53,6 +53,16 @@ def convert_word_to_pdf(docx_path, pdf_path):
 
     os.replace(generated_pdf, pdf_path)
 
+def extract_pdf_text(pdf_path):
+    reader = PdfReader(pdf_path)
+
+    text = ""
+
+    for page in reader.pages:
+        text += page.extract_text() or""
+
+
+return text
 
 # Start command
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
