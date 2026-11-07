@@ -5,6 +5,7 @@ import traceback
 import subprocess
 from pdf2docx import Converter
 from pypdf import PdfReader
+from docx import Document
 from telegram import Update
 from telegram.ext import (
     Application,
@@ -63,7 +64,17 @@ def extract_pdf_text(pdf_path):
 
 
     return text
+def extract_word_text(docx_path):
+    document = Document(docx_path)
 
+    text = ""
+
+    for paragraph in
+document.paragraphs:
+        text += paragraph.text + "\n"
+
+    return text
+    
 # Start command
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text(
