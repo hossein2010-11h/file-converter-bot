@@ -156,7 +156,9 @@ app.add_handler(
 
 print("Bot is running...")
 
-app.run_polling(
-    timeout=30,
-    poll_interval=2
+app.run_webhook(
+    listen="0.0.0.0",
+    port=int(os.environ.get("PORT", "10000")),
+    url_path=TOKEN,
+    webhook_url=f"https://{os.environ['RENDER_EXTERNAL_HOSTNAME']}/{TOKEN}"
 )
