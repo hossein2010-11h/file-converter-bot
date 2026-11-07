@@ -1,2 +1,4 @@
 python-telegram-bot[webhooks]==22.8
 pdf2docx
+pypdf
+python-docx
