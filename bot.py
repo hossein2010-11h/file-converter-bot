@@ -3,8 +3,8 @@ import asyncio
 import tempfile
 import traceback
 import subprocess
-
 from pdf2docx import Converter
+from pypdf import PdfReader
 from telegram import Update
 from telegram.ext import (
     Application,
