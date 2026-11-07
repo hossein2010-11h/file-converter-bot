@@ -62,7 +62,7 @@ def extract_pdf_text(pdf_path):
         text += page.extract_text() or""
 
 
-return text
+    return text
 
 # Start command
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
