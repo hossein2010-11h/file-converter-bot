@@ -69,8 +69,7 @@ def extract_word_text(docx_path):
 
     text = ""
 
-    for paragraph in
-document.paragraphs:
+    for paragraph in document.paragraphs:
         text += paragraph.text + "\n"
 
     return text
